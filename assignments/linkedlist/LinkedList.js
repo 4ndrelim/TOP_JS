@@ -51,12 +51,33 @@ const LinkedList = () => {
     const at = (index) => {
         if (!HEAD) return null;
         let pointer = HEAD;
-        for (let i = 0; i < index; i++) {
+        let i = 0;
+        while (pointer !== null && i < index) {
             pointer = pointer.nextNode;
+            i++;
         }
         return pointer;
     };
 
+    const pop = () => {
+        if (HEAD === null) {
+            return null;
+        }
+        if (HEAD.nextNode === null) {
+            let tmp = HEAD;
+            HEAD = null;
+            length--;
+            return tmp;
+        }
+        let pointer = HEAD;
+        while (pointer.nextNode.nextNode !== null) {
+            pointer = pointer.nextNode;
+        }
+        let tmp = pointer.nextNode;
+        pointer.nextNode = null;
+        length--;
+        return tmp;
+    }
     
 
     return {
@@ -66,6 +87,7 @@ const LinkedList = () => {
         size,
         tail,
         at,
+        pop,
     };
 };
 
