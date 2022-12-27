@@ -78,7 +78,78 @@ const LinkedList = () => {
         length--;
         return tmp;
     }
+
+    const contains = (value) => {
+        if (!HEAD) return null;
+        let pointer = HEAD;
+        while (pointer !== null) {
+            if (pointer.value === value) {
+                return true;
+            }
+            pointer = pointer.nextNode;
+        }
+        return false;
+    }
+
+    const find = (value) => {
+        if (!HEAD) return null;
+        let index = 0;
+        let pointer = HEAD;
+        while (pointer !== null) {
+            if (pointer.value === value) {
+                return index;
+            }
+            index++;
+            pointer = pointer.nextNode;
+        }
+        return -1;
+    }
+
+    const toString = () => {
+        if (!HEAD) return null;
+        let pointer = HEAD;
+        let result = "";
+        while (pointer !== null) {
+            result = result.concat(`( ${pointer.value} ) --> `);
+            pointer = pointer.nextNode;
+        }
+        result = result.concat('null');
+        return result;
+    }
     
+    const insertAt = (value, index) => {
+        const newNode = Node(value);
+        length++;
+        let pointer = HEAD;
+        if (index === 0) {
+            HEAD = newNode;
+            HEAD.nextNode = pointer;
+            return;
+        }
+        for (let i = 0; i < index-1; i++) {
+            pointer = pointer.nextNode;
+        }
+        const nextNode = pointer.nextNode;
+        pointer.nextNode = newNode;
+        newNode.nextNode = nextNode;
+    }
+
+    const removeAt = (index) => {
+        if (index < 0 || index >= length) {
+            return null;
+        }
+        let ret = null;
+        if (index === 0) {
+            ret = HEAD;
+            HEAD = HEAD.nextNode;
+        } else {
+            const pre = at(index-1);
+            ret = pre.nextNode;
+            pre.nextNode = pre.nextNode.nextNode;
+        }
+        length--;
+        return ret;;
+    }
 
     return {
         append,
@@ -88,6 +159,11 @@ const LinkedList = () => {
         tail,
         at,
         pop,
+        contains,
+        find,
+        toString,
+        insertAt,
+        removeAt,
     };
 };
 
