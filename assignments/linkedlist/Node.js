@@ -1,4 +1,4 @@
-const (Node) => {
+const Node = (input) => {
     return {
         value: input || null,
         nextNode: null,
