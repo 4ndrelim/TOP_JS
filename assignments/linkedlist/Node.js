@@ -7,3 +7,5 @@ const Node = (input) => {
         },
     };
 };
+
+export default Node;
