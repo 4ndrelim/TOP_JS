@@ -94,14 +94,68 @@ class Tree {
         return ret;
     };
 
-    inOrder(root) {};
+    inOrder() {
+        const stack = [];
+        const ret = [];
+        let curr = this.root;
+        while (curr !== null || stack.length > 0) {
+            while (curr !== null) {
+                stack.push(curr);
+                curr = curr.left;
+            }
+            curr = stack.pop();
+            ret.push(curr.data);
+            curr = curr.right;
+        }
+        return ret;
+    };
 
-    postOrder(root) {};
+    postOrder() {
+        const stack = [];
+        const ret = [];
+        if (this.root !== null) {
+            stack.push(this.root);
+        }
+        while (stack.length > 0) {
+            let current = stack.pop();
+            ret.push(current.data);
+            if (current.left != null) stack.push(current.left);
+            if (current.right !== null) stack.push(current.right);
+        }
+        ret.reverse();
+        return ret;
+    };
 
-    height(root) {};
+    height(node) {
+        if (node === null) {
+            return -1;
+        } else {
+            let left = this.height(root.left);
+            let right = this.height(root.right);
+            return Math.max(left, right) + 1;
+        }
+    }
 
-    depth(node, root = this.root) {};
+    depth(node) {
+        if (node === null) return -1;
+        return this.#depth(node, this.root);
+    };
 
+    #depth(node, root) {
+        let d = -1;
+        if (root == node) {
+            return 0;
+        }
+        if (node.data > root.data) {
+            d = this.#depth(node, root.right)
+        } else {
+            d = this.#depth(node, root.left);
+        }
+        if (d >= 0) {
+            return d + 1;
+        }
+        return d;
+    }
     delete(value, root = this.root) {};
 
     #prettyPrint(node, prefix = '', isLeft = true) {
@@ -125,4 +179,7 @@ tree.insert(8);
 tree.prettyPrint();
 console.log(tree.levelOrder());
 console.log(tree.preOrder());
+console.log(tree.postOrder());
+console.log(tree.inOrder());
+console.log(tree.depth(tree.root.right.right));
 
