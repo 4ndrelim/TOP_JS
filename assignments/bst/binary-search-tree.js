@@ -10,7 +10,6 @@ class Tree {
     constructor(array) {
         // remove duplicates
         this.array = [...new Set(array)].sort((a,b) => a-b);
-        console.log(this.array);
         this.root = this.buildTree(0, this.array.length-1);
     };
 
@@ -130,8 +129,8 @@ class Tree {
         if (node === null) {
             return -1;
         } else {
-            let left = this.height(root.left);
-            let right = this.height(root.right);
+            let left = this.height(node.left);
+            let right = this.height(node.right);
             return Math.max(left, right) + 1;
         }
     }
@@ -190,6 +189,23 @@ class Tree {
         return min;
     }
 
+    #isBalanced(root) {
+        if (root == null) return false;
+        let left = root.left;
+        let right = root.right;
+        if (Math.abs(this.height(left) - this.height(right)) > 1) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    rebalance() {
+        if (this.#isBalanced(this.root)) return this.root;
+        this.array = this.inOrder();
+        this.root = this.buildTree(0, this.array.length-1);
+    }
+
     #prettyPrint(node, prefix = '', isLeft = true) {
         if (node.right !== null) {
             this.#prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
@@ -215,5 +231,10 @@ console.log(tree.postOrder());
 console.log(tree.inOrder());
 console.log(tree.depth(tree.root.right.right));
 tree.delete(6);
+tree.prettyPrint();
+tree.insert(9);
+tree.insert(11);
+tree.prettyPrint();
+tree.rebalance();
 tree.prettyPrint();
 
