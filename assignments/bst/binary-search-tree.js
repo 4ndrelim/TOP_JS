@@ -156,7 +156,39 @@ class Tree {
         }
         return d;
     }
-    delete(value, root = this.root) {};
+
+    delete(value) {
+        this.root = this.#delete(value, this.root);
+    }
+
+    #delete(value, node) {
+        if (node === null) {
+            return node;
+        }
+        if (node.data > value) {
+            node.left = this.#delete(value, node.left);
+        } else if (node.data < value) {
+            node.right = this.#delete(value, node.right);
+        } else {
+            if (node.left === null) {
+                return node.right;
+            } else if (node.right === null) {
+                return node.left;
+            }
+            node.data = this.#minValue(node.right);
+            node.right = this.#delete(node.data, node.right);
+        }
+        return node;
+    };
+
+    #minValue(root) {
+        let min = root.data;
+        while (root !== null) {
+            min = root.data;
+            root = root.left;
+        }
+        return min;
+    }
 
     #prettyPrint(node, prefix = '', isLeft = true) {
         if (node.right !== null) {
@@ -182,4 +214,6 @@ console.log(tree.preOrder());
 console.log(tree.postOrder());
 console.log(tree.inOrder());
 console.log(tree.depth(tree.root.right.right));
+tree.delete(6);
+tree.prettyPrint();
 
