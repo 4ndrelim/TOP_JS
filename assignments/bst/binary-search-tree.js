@@ -27,8 +27,23 @@ class Tree {
         return root;
     };
 
-    insert(value, root = this.root) {
+    #insert(value, node) {
+        if (node === null) {
+            return new Node(value);
+        }
+        if (node.value > value) {
+            node.left = this.#insert(value, node.left);
+        } else {
+            node.right = this.#insert(value, node.right)
+        }
+        return node
+    }
 
+    insert(value) {
+        if (this.root == null) {
+            this.root = new Node(value);
+        } 
+        this.#insert(value, this.root);
     };
 
     traverse(root, array) {};
@@ -49,17 +64,23 @@ class Tree {
 
     depth(node, root = this.root) {};
 
-    prettyPrint(node = this.root, prefix = '', isLeft = true) {
+    #prettyPrint(node, prefix = '', isLeft = true) {
         if (node.right !== null) {
-            this.prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
+            this.#prettyPrint(node.right, `${prefix}${isLeft ? '│   ' : '    '}`, false);
           }
           console.log(`${prefix}${isLeft ? '└── ' : '┌── '}${node.data}`);
           if (node.left !== null) {
-            this.prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
+            this.#prettyPrint(node.left, `${prefix}${isLeft ? '    ' : '│   '}`, true);
           }
     };
+
+    prettyPrint() {
+        this.#prettyPrint(this.root);
+    }
 }
 
 tree = new Tree([4,7,3,2,1,2]);
+tree.prettyPrint();
+tree.insert(8);
 tree.prettyPrint();
 
