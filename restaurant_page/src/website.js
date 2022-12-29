@@ -61,7 +61,7 @@ function setActiveButton(button) {
 
 function createMainBody() {
     const mainBody = document.createElement("main");
-    // styling for main
+    mainBody.classList.add("main");
     mainBody.setAttribute("id", "mainBody");
     return mainBody;
 }

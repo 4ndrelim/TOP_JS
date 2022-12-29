@@ -1,6 +1,6 @@
 function homeTab() {
     const home = document.createElement("div");
-    // styling
+    home.classList.add("home");
 
     const logo = document.createElement("img");
     logo.src = "icons/diner_icon.png";
@@ -9,7 +9,7 @@ function homeTab() {
     home.appendChild(makeParagraph("食事処 ゆきひら へようこそ"));
     home.appendChild(makeParagraph("Since 2014"));
     home.appendChild(logo);
-    home.appendChild(makeParagraph("どうぞおいでください!"));
+    home.appendChild(makeParagraph("どうぞおいでください !"));
 
     return home;
 }
