@@ -68,3 +68,23 @@ button {
     height: 100vh;
 }
 
+/* Header */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem;
+    background-color: var(--background-dark);
+    border-bottom: 1px solid var(--border-color);
+  }
+
+.restaurant-name {
+    margin-bottom: 1rem;
+    font-family: 'Tangerine', cursive;
+    font-size: 10rem;
+}
+  
+

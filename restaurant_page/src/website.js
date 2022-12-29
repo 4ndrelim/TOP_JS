@@ -2,9 +2,12 @@ import loadHomeTab from "./home";
 
 function createHeader() {
     const header = document.createElement("header");
-    header.classList.add("header"); // styling later on
+    header.classList.add("header");
+
     const restaurantName = document.createElement("h1");
-    // missing stuff
+    restaurantName.classList.add("restaurant-name");
+    restaurantName.textContent = "Yukihira's Diner";
+
     header.appendChild(restaurantName);
     header.appendChild(createNav());
     return header;
