@@ -1,1 +1,3 @@
-console.log('help');
+import initializeWebsite from "./website";
+
+initializeWebsite();
