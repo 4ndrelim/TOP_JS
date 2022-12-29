@@ -5,21 +5,21 @@ function menuTab() {
     menu.appendChild(
         createItem(
             "Egg Souffle",
-            "TBA",
+            "Soft, springy and bouncy mini soufflé omelette",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Egg Tempura",
-            "TBA",
+            "Deep-fried frozen egg in tempura batter over rice",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Hearty Pork Roast",
-            "TBA",
+            "Impossible meat.",
         ),
     );
 
@@ -33,35 +33,35 @@ function menuTab() {
     menu.appendChild(
         createItem(
             "Caveman Specialty",
-            "TBA",
+            "Fusion ground meat dish - House's Specialty",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Le Plat Veritable",
-            "TBA",
+            "Squid in peanut butter fancy-fied",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Chaliapin Steak Don",
-            "TBA",
+            "Steak donburi",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Furikake Gohan",
-            "TBA",
+            "Eggs covered with a golden coating using chilled chicken broth to create a golden jewel",
         ),
     );
 
     menu.appendChild(
         createItem(
             "Souffle Leger de Grace",
-            "TBA",
+            "Fluffiness of souffle with red bean paste centre of dorayaki",
         ),
     );
 

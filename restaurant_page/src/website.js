@@ -46,7 +46,7 @@ function createNav() {
 
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
-    nav.appendChild(contactButton);
+    // nav.appendChild(contactButton);
     return nav;
 }
 
@@ -69,10 +69,21 @@ function createMainBody() {
 
 function createFooter() {
     const footer = document.createElement("footer");
-    // styling for footer
-    const someText = document.createElement("p");
-    someText.textContent = "footer";
-    footer.appendChild(someText);
+    footer.classList.add("footer");
+
+    const andre = document.createElement("p");
+    andre.textContent = `lima_dingdong ${new Date().getFullYear()}`;
+
+    const githubLink = document.createElement("a");
+    githubLink.href = "https://github.com/4ndrelim";
+
+    const githubIcon = document.createElement("i");
+    githubIcon.classList.add("fab");
+    githubIcon.classList.add("fa-github");
+
+    githubLink.appendChild(githubIcon);
+    footer.appendChild(githubLink);
+    footer.appendChild(andre);
     return footer;
 }
 
