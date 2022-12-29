@@ -86,5 +86,21 @@ button {
     font-family: 'Tangerine', cursive;
     font-size: 10rem;
 }
+
+.button-nav {
+    padding: 2rem;
+    font-size: 2rem;
+    background-color: transparent;
+    border-bottom: 2px solid transparent;
+    transition: transform 0.3s;
+}
+
+.button-nav.active {
+    border-bottom: 2px solid var(--font-color);
+}
+
+.button-nav:hover {
+    transform: translateY(-10%);
+}
   
 

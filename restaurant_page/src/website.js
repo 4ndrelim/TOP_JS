@@ -16,22 +16,47 @@ function createHeader() {
 function createNav() {
     const nav = document.createElement("nav");
     const homeButton = document.createElement("button");
+    homeButton.setAttribute("id", "homeButton");
     homeButton.classList.add("button-nav");
     homeButton.textContent = "Home";
-    // missing event listener for loadHomePage
+    homeButton.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(homeButton);
+        loadHomeTab();
+    });
 
     const menuButton = document.createElement("button");
+    menuButton.classList.add("button-nav");
     menuButton.textContent = "Menu";
-    // missing event listener for loadMenu
+    menuButton.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(menuButton);
+        // call menuTab();
+    });
 
     const contactButton = document.createElement("button");
+    contactButton.classList.add("button-nav");
     contactButton.textContent = "Contact";
-    // missing event listener for button
+    contactButton.addEventListener("click", (e) => {
+        if (e.target.classList.contains("active")) return;
+        setActiveButton(contactButton);
+        // call contactTab();
+    });
 
     nav.appendChild(homeButton);
     nav.appendChild(menuButton);
     nav.appendChild(contactButton);
     return nav;
+}
+
+function setActiveButton(button) {
+    const buttons = document.querySelectorAll(".button-nav");
+
+    buttons.forEach((btn) => {
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
 }
 
 function createMainBody() {
@@ -56,6 +81,7 @@ function initializeWebsite() {
     content.appendChild(createMainBody());
     content.appendChild(createFooter());
 
+    setActiveButton(document.getElementById("homeButton"));
     loadHomeTab();
 }
 
