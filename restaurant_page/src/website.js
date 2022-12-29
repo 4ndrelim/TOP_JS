@@ -1,3 +1,5 @@
+import loadHomeTab from "./home";
+
 function createHeader() {
     const header = document.createElement("header");
     header.classList.add("header"); // styling later on
@@ -50,6 +52,8 @@ function initializeWebsite() {
     content.appendChild(createHeader());
     content.appendChild(createMainBody());
     content.appendChild(createFooter());
+
+    loadHomeTab();
 }
 
 export default initializeWebsite;
