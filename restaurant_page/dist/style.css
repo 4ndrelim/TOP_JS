@@ -6,3 +6,25 @@
     --background-light-hover: rgba(99, 99, 99, 0.4);
     --background-dark: rgba(0, 0, 0, 0.9);
   }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6;
+  }
+  
+  body {
+    font-family: 'Montserrat', cursive;
+    font-size: 1.6rem;
+    color: var(--font-color);
+    background-image: url('imgs/home.png');
+    background-attachment: fixed;
+    background-size: cover;
+  }
