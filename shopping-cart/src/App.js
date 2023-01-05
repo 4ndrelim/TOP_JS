@@ -1,11 +1,10 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Products from './pages/Products';
 import Contact from './pages/Contact';
 
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-const App = () => {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -15,6 +14,6 @@ const App = () => {
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

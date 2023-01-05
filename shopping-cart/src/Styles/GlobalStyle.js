@@ -1,4 +1,4 @@
-import * as styled from 'styled-components'
+import * as styled from 'styled-components';
 // without styled. css formatting doesn't work
 const GlobalStyle = styled.createGlobalStyle` 
   *,
@@ -47,5 +47,5 @@ const GlobalStyle = styled.createGlobalStyle`
   button {
     cursor: pointer;
   }
-`
-export default GlobalStyle
+`;
+export default GlobalStyle;
