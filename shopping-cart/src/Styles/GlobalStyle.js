@@ -15,11 +15,9 @@ const GlobalStyle = styled.createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
     font-size: 1.6rem;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.grey.light};
   }
-  header {
-    font-size: 3rem;
-  }
+
   h1,
   h2,
   h3,
