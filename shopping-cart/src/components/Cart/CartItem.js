@@ -8,11 +8,11 @@ function CartItem({ name, price, image }) {
     <CartItemWrapper>
       <Image src={image} />
       <Info>
-        <p>{name}</p>
-        <p>{price}</p>
+        <div>{name}</div>
+        <div>{price}</div>
         <AmountChanger>
           <Button content={<FaMinus />} type="decrement" />
-          <Amount>1</Amount>
+          <div>1</div>
           <Button content={<FaPlus />} type="increment" />
         </AmountChanger>
       </Info>
@@ -22,11 +22,6 @@ function CartItem({ name, price, image }) {
 
 const CartItemWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  font-size: 2rem;
-  font-weight: bold;
 `;
 
 const Image = styled.img`
@@ -40,16 +35,13 @@ const Info = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
+  font-size: 2rem;
 `;
 
 const AmountChanger = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 3rem;
 `;
-
-const Amount = styled.div``;
 
 export default CartItem;

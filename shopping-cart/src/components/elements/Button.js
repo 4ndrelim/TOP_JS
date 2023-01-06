@@ -42,20 +42,29 @@ const ButtonWrapper = styled.button`
           }
         `};
 
-        /* CLOSE BUTTON */
+  /* CLOSE BUTTON */
   ${(props) => props.type === 'close'
-    && css`
-      position: absolute;
-      top: 5rem;
-      right: 3rem;
-      padding: 0;
-      color: red;
-      font-size: 6rem;
-      transition: transform 0.2s ease-in-out;
+  && css`
+      width: 100%;
+      padding: 1rem;
+      border-radius: 0px;
+      background-color: #ff9999;
+      color: ${({ theme }) => theme.colors.dark};
+      font-weight: bold;
+      transition: background-color 0.15s ease-in-out;
       &:hover {
-        transform: rotate(90deg);
+        background-color: #ee8888;
+        transform: scale(1);
+      }
+      &:active {
+        background-color: #dd7777;
+        transition: background-color 0.05s ease-in-out;
       }
     `}
+
+    
+
+
     /* AMOUNT CHANGER */
     ${(props) => ((props.type === 'increment') || (props.type === 'decrement'))
       && css`
@@ -65,11 +74,11 @@ const ButtonWrapper = styled.button`
       color: ${({ theme }) => theme.colors.dark};
       transition: background-color 0.15s ease-in-out;
       &:hover {
-        background-color: #35eec2;
+        background-color: #d4d4d4;
         transform: scale(1);
       }
       &:active {
-        background-color: #24ddb1;
+        background-color: #c3c3c3;
         transition: background-color 0.05s ease-in-out;
       }
     `}
