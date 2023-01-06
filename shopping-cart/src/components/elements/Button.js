@@ -25,10 +25,21 @@ const ButtonWrapper = styled.button`
       /* ADDING BUTTON */
       ${(props) => props.type === 'addingBtn'
         && css`
-          width: 20rem;
+          width: 100%;
+          padding: 1rem;
           background-color: ${({ theme }) => theme.colors.primary};
           color: ${({ theme }) => theme.colors.dark};
           border-radius: 0px;
+          font-weight: bold;
+          transition: background-color 0.15s ease-in-out;
+          &:hover {
+            background-color: #35eec2;
+            transform: scale(1);
+          }
+          &:active {
+            background-color: #24ddb1;
+            transition: background-color 0.05s ease-in-out;
+          }
         `};
 `;
 

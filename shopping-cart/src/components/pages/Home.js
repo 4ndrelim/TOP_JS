@@ -13,6 +13,7 @@ const HomeWrapper = styled.div`
   @media (max-width: 1000px) {
     justify-content: center;
   }
+  margin-bottom: 7rem;
 `;
 
 const Message = styled.div`
@@ -31,6 +32,7 @@ const SmallMessage = styled.div`
   letter-spacing: 0.5rem;
   font-size: 1.9rem;
   color: ${({ theme }) => theme.colors.grey.dark};
+  font-weight: bold;
 `;
 
 const BigMessage = styled.div`

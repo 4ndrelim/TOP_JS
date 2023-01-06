@@ -39,7 +39,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: ${({ theme }) => theme.widths.content};
+  max-width: ${({ theme }) => theme.widths.content};
   padding: 4rem 0;
   margin: 0 auto;
   @media (max-width: 1000px) {
