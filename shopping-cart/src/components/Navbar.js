@@ -8,7 +8,7 @@ const NavBarWrapper = styled.nav`
     display: flex;
     align-items: center;
     gap: 8rem;
-    font-size: 3rem;
+    font-size: 2.5rem;
 `;
 
 const StyledLink = styled(Link)`
