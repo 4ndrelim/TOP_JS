@@ -7,12 +7,13 @@ import Button from './elements/Button';
 const HeaderWrapper = styled.header`
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 3.5rem 20rem;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 30rem;
   background-color: ${({ theme }) => theme.colors.dark};
-  @media (max-width: 1030px) {
+  @media (max-width: 1000px) {
     flex-direction: column;
-    gap: 5rem;
+    gap: 4rem;
   };
 `;
 const Logo = styled.h1`
@@ -23,12 +24,15 @@ const Logo = styled.h1`
 const NavBar = styled.nav`
     display: flex;
     align-items: center;
-    gap: 8rem;
-    font-size: 2.5rem;
-    @media (max-width: 700px) {
-        flex-direction: column;
-        gap: 5rem;
+    justify-content: space-between;
+    font-size: 2.4rem;
+    width: 80rem;
+    @media (max-width: 600px) {
+        width: 60rem;
     };
+    @media (max-width: 450px) {
+      width: 40rem;
+  };
 `;
 
 const StyledLink = styled(Link)`
