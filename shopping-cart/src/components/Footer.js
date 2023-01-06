@@ -37,7 +37,7 @@ const GithubLink = styled.a`
   display: flex;
   color: ${({ theme }) => theme.colors.dark};
   font-size: 3rem;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.15s ease-in-out;
   &:hover {
     transform: scale(1.4);
   }
