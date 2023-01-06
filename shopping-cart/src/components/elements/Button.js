@@ -20,7 +20,16 @@ const ButtonWrapper = styled.button`
         color: ${({ theme }) => theme.colors.light};
         font-size: 4rem;
         font-weight: bold;
-      `}
+      `};
+
+      /* ADDING BUTTON */
+      ${(props) => props.type === 'addingBtn'
+        && css`
+          width: 20rem;
+          background-color: ${({ theme }) => theme.colors.primary};
+          color: ${({ theme }) => theme.colors.dark};
+          border-radius: 0px;
+        `};
 `;
 
 function Button({ content, type }) {

@@ -1,6 +1,6 @@
 const Theme = {
   colors: {
-    primary: '#46FFD3',
+    primary: '#faebd7',
     dark: '#000',
     light: '#FFF',
     grey: {
@@ -8,6 +8,10 @@ const Theme = {
       main: '#E5E5E5',
       dark: '#7B7B7B',
     },
+  },
+
+  widths: {
+    content: '140rem',
   },
 };
 

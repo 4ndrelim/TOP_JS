@@ -4,18 +4,6 @@ import styled from 'styled-components';
 import { FaShoppingCart } from 'react-icons/fa';
 import Button from './elements/Button';
 
-const HeaderWrapper = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 0;
-  gap: 30rem;
-  background-color: ${({ theme }) => theme.colors.dark};
-  @media (max-width: 1000px) {
-    flex-direction: column;
-    gap: 4rem;
-  };
-`;
 const Logo = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
   font-size: 6rem;
@@ -43,17 +31,37 @@ const StyledLink = styled(Link)`
     };
 `;
 
+const HeaderBackground = styled.header`
+  background-color: ${({ theme }) => theme.colors.dark};
+`;
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: ${({ theme }) => theme.widths.content};
+  padding: 4rem 0;
+  margin: 0 auto;
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+  }
+`;
+
 function Header() {
   return (
-    <HeaderWrapper>
-      <Logo>STORE</Logo>
-      <NavBar>
-        <StyledLink to="/">Home</StyledLink>
-        <StyledLink to="/products">Products</StyledLink>
-        <StyledLink to="/contact">Contact</StyledLink>
-        <Button content={<FaShoppingCart />} />
-      </NavBar>
-    </HeaderWrapper>
+    <HeaderBackground>
+      <HeaderWrapper>
+        <Logo>Welcome</Logo>
+        <NavBar>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/products">Products</StyledLink>
+          <StyledLink to="/contact">Contact</StyledLink>
+          <Button content={<FaShoppingCart />} />
+        </NavBar>
+      </HeaderWrapper>
+    </HeaderBackground>
   );
 }
 
