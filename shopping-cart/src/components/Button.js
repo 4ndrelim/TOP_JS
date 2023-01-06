@@ -7,6 +7,10 @@ const ButtonWrapper = styled.button`
     align-items: center;
     padding: 2rem;
     border-radius: 50px;
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.1);
+    };
 `;
 
 function Button({ content, type }) {

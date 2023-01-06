@@ -9,10 +9,18 @@ const NavBarWrapper = styled.nav`
     align-items: center;
     gap: 8rem;
     font-size: 2.5rem;
+    @media (max-width: 700px) {
+        flex-direction: column;
+        gap: 5rem;
+    };
 `;
 
 const StyledLink = styled(Link)`
     color: ${({ theme }) => theme.colors.light};
+    transition: transform 0.2s ease-in-out;
+    &:hover {
+        transform: scale(1.15);
+    };
 `;
 
 function Navbar() {
