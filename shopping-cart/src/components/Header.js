@@ -8,7 +8,7 @@ const HeaderWrapper = styled.header`
   justify-content: space-between;
   padding: 5rem 20rem;
   background-color: ${({ theme }) => theme.colors.dark};
-  @media (max-width: 1630px) {
+  @media (max-width: 1030px) {
     flex-direction: column;
     gap: 5rem;
   };

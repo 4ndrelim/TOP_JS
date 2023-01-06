@@ -13,8 +13,8 @@ const ButtonWrapper = styled.button`
     };
 `;
 
-function Button({ content, type }) {
-  return <ButtonWrapper type={type}>{content}</ButtonWrapper>;
+function Button({ content }) {
+  return <ButtonWrapper>{content}</ButtonWrapper>;
 }
 
 export default Button;

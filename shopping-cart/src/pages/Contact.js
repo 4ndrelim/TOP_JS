@@ -1,11 +1,12 @@
 import React from 'react';
+import Background from '../components/elements/Background';
 
-const Contact = () => {
-    return (
-        <div>
-            Contact Page
-        </div>
-    );
-};
+function Contact() {
+  return (
+    <Background>
+      Contact
+    </Background>
+  );
+}
 
 export default Contact;

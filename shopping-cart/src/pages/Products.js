@@ -1,10 +1,11 @@
 import React from 'react';
+import Background from '../components/elements/Background';
 
 function Products() {
   return (
-    <div>
-      Products Page
-    </div>
+    <Background>
+      Products
+    </Background>
   );
 }
 
