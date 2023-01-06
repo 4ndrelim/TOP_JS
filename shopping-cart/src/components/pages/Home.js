@@ -7,7 +7,7 @@ import Button from '../elements/Button';
 
 const HomeWrapper = styled.div`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 2%;
   @media (max-width: 1000px) {
@@ -65,7 +65,7 @@ function Home() {
         <SmallMessage>Hottest Store In Town!</SmallMessage>
         <BigMessage>Life May Not Be Perfect but Your Outfit Can Be</BigMessage>
         <Link to="/products">
-          <Button content="Shop Now" type="messageBtn" />
+          <Button content="Shop Now" type="shopBtn" />
         </Link>
       </Message>
       <Image src={homepageImage} alt="people" />
