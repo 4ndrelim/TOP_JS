@@ -28,7 +28,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   width: 100%;
   padding: 1rem 0;
-  font-size: 1.5rem;
+  font-size: 2.2rem;
   text-align: center;
   `;
 

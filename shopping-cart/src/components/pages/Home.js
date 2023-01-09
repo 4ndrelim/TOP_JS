@@ -14,6 +14,15 @@ const HomeWrapper = styled.div`
     justify-content: center;
   }
   margin-bottom: 7rem;
+
+  animation: fadeIn ease 2s;
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
 `;
 
 const Message = styled.div`
