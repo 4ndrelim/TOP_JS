@@ -81,8 +81,8 @@ const ButtonWrapper = styled.button`
     `}
 `;
 
-function Button({ content, type }) {
-  return <ButtonWrapper type={type}>{content}</ButtonWrapper>;
+function Button({ onClick, content, type }) {
+  return <ButtonWrapper onClick={onClick} type={type}>{content}</ButtonWrapper>;
 }
 
 export default Button;

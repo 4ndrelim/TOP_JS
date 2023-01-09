@@ -1,11 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { v4 as uuidv4 } from 'uuid';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from '../elements/Button';
 import CartItem from './CartItem';
 import exampleProducts from '../../assets/exampleProducts';
+import { closeCart } from '../../state/actions';
 
 function Cart() {
+  const isCartOpen = useSelector((state) => state.isCartOpenReducer);
+  const dispatch = useDispatch();
   const products = exampleProducts.map((product) => (
     <CartItem
       key={uuidv4()}
@@ -17,14 +21,14 @@ function Cart() {
 
   return (
     <div>
-      <CartWrapper>
+      <CartWrapper isOpen={isCartOpen}>
         <Title>Your shopping cart</Title>
         <Products>{products}</Products>
         <div>Total: $179.91</div>
         <Button content="Checkout" type="primary" />
-        <Button content="Close" type="close" />
+        <Button onClick={() => dispatch(closeCart())} content="Close" type="close" />
       </CartWrapper>
-      <Overlay />
+      <Overlay onClick={() => dispatch(closeCart())} isOpen={isCartOpen} />
     </div>
   );
 }
@@ -32,9 +36,9 @@ function Cart() {
 // later add code to darken page
 
 const CartWrapper = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
+  right: -100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -45,7 +49,13 @@ const CartWrapper = styled.div`
   background-color: ${({ theme }) => theme.colors.grey.light};
   font-size: 3rem;
   font-weight: bold;
+  transition: right 0.85s ease-in-out;
   z-index: 1;
+
+  ${(props) => props.isOpen
+  && css`
+    right: 0;
+  `}
 `;
 
 const Title = styled.div`
@@ -63,13 +73,19 @@ const Products = styled.div`
 `;
 
 const Overlay = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
-  width: 100vw;
+  left: -100%;
+  width: 100%;
   height: 100%;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.6;
+  transition: left 0.85s ease-in-out;
+
+  ${(props) => props.isOpen
+    && css`
+      left: 0%;
+    `}
 `;
 
 export default Cart;

@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
 import Button from './elements/Button';
+import { openCart } from '../state/actions';
 
 const Logo = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
@@ -50,6 +52,7 @@ const HeaderWrapper = styled.div`
 `;
 
 function Header() {
+  const dispatch = useDispatch();
   return (
     <HeaderBackground>
       <HeaderWrapper>
@@ -58,7 +61,7 @@ function Header() {
           <StyledLink to="/">Home</StyledLink>
           <StyledLink to="/products">Products</StyledLink>
           <StyledLink to="/contact">Contact</StyledLink>
-          <Button content={<FaShoppingCart />} />
+          <Button onClick={() => dispatch(openCart())} content={<FaShoppingCart />} />
         </NavBar>
       </HeaderWrapper>
     </HeaderBackground>

@@ -8,12 +8,12 @@ import Cart from './components/Cart/Cart';
 function App() {
   return (
     <div>
-      {/* <Cart /> */}
       <BrowserRouter>
         <Header />
         <Main />
       </BrowserRouter>
       <Footer />
+      <Cart />
     </div>
   );
 }
