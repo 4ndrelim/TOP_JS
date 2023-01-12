@@ -17,11 +17,11 @@ const NavBar = styled.nav`
     justify-content: space-between;
     font-size: 2.4rem;
     width: 80rem;
-    @media (max-width: 600px) {
+    @media (max-width: 650px) {
         width: 60rem;
     };
     @media (max-width: 450px) {
-      width: 40rem;
+      width: 50rem;
   };
 `;
 

@@ -7,13 +7,9 @@ import Button from '../elements/Button';
 
 const HomeWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2%;
-  @media (max-width: 1000px) {
-    justify-content: center;
-  }
-  margin-bottom: 7rem;
+  gap: 6rem;
+  margin-top: 12rem;
+  margin-bottom: 24rem;
 
   animation: fadeIn ease 2s;
   @keyframes fadeIn {
@@ -23,6 +19,10 @@ const HomeWrapper = styled.div`
     100% {
       opacity: 1;
     }
+  @media (max-width: 1100px) {
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 const Message = styled.div`
@@ -31,8 +31,9 @@ const Message = styled.div`
   align-items: flex-start;
   width: 50rem;
   min-width: 50rem;
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     align-items: center;
+    width: 50rem;
   }
 `;
 
@@ -48,7 +49,7 @@ const BigMessage = styled.div`
   font-size: 6.4rem;
   font-weight: bold;
   margin-bottom: 3rem;
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     text-align: center;
   }
 `;
@@ -56,7 +57,7 @@ const BigMessage = styled.div`
 const Image = styled.img`
   max-width: 80rem;
   opacity: 0.85;
-  @media (max-width: 1000px) {
+  @media (max-width: 1100px) {
     position: absolute;
     opacity: 0.3;
     z-index: -1;

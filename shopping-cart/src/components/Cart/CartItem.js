@@ -4,11 +4,28 @@ import { FaMinus, FaPlus } from 'react-icons/fa';
 import Button from '../elements/Button';
 
 function CartItem({ name, price, image }) {
+  const formatName = (n) => {
+    const words = n.split(' ');
+    let result = '';
+    if (words.length < 3) {
+      return n;
+    }
+    for (let i = 0; i < 3; i++) {
+      result += `${words[i]} `;
+    }
+    if (words.length > 3) {
+      result += '...';
+    }
+    return result;
+  };
+
   return (
     <CartItemWrapper>
-      <Image src={image} />
+      <ImageContainer>
+        <Image src={image} />
+      </ImageContainer>
       <Info>
-        <div>{name}</div>
+        <Name>{formatName(name)}</Name>
         <div>{price}</div>
         <AmountChanger>
           <Button content={<FaMinus />} type="decrement" />
@@ -20,12 +37,25 @@ function CartItem({ name, price, image }) {
   );
 }
 
+const Name = styled.div`
+  font-weight: bold;
+  height: 3rem;
+  overflow: hidden;
+`;
+
 const CartItemWrapper = styled.div`
   display: flex;
 `;
 
 const Image = styled.img`
-  width: 14rem;
+  height: 100%;
+  width: auto;
+`;
+
+const ImageContainer = styled.div`
+  height: 13rem;
+  width: 20%; 
+  margin: auto;
 `;
 
 const Info = styled.div`

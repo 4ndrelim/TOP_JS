@@ -52,6 +52,10 @@ const CartWrapper = styled.div`
   transition: right 0.85s ease-in-out;
   z-index: 1;
 
+  @media (max-width: 500px) {
+    width: 100%;
+  }
+
   ${(props) => props.isOpen
   && css`
     right: 0;
@@ -61,6 +65,7 @@ const CartWrapper = styled.div`
 const Title = styled.div`
   font-size: 4rem;
   margin-bottom: 2rem;
+  font-weight: bold;
 `;
 
 const Products = styled.div`

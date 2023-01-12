@@ -38,9 +38,9 @@ const ContactWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 13rem;
+  margin-top: 14rem;
   /* hide footer */
-  margin-bottom: 14.8rem;
+  margin-bottom: 20rem;
   animation: fadeIn ease 2s;
   @keyframes fadeIn {
     0% {
@@ -60,7 +60,7 @@ const SocialMedia = styled.div`
     gap: 8rem;
     font-size: 8rem;
   }
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     gap: 5rem;
     font-size: 5rem;
 `;
@@ -69,7 +69,7 @@ const Location = styled.div`
   font-size: 3rem;
   font-weight: bold;
   text-align: center;
-  @media (max-width: 600px) {
+  @media (max-width: 650px) {
     font-size: 2.4rem;
 `;
 

@@ -16,20 +16,27 @@ const ButtonWrapper = styled.button`
     ${(props) => props.type === 'shopBtn'
       && css`
         width: 39rem;
-        background-color: ${({ theme }) => theme.colors.dark};
+        background-color: ${({ theme }) => theme.colors.lightdark};
         color: ${({ theme }) => theme.colors.light};
         font-size: 4rem;
         font-weight: bold;
+        &:hover {
+          background-color: ${({ theme }) => theme.colors.dark};
+        }
+        &:active {
+          // mix-blend-mode: exclusion;
+          opacity: 0.5;
+        }
       `};
 
       /* ADDING BUTTON */
       ${(props) => props.type === 'addingBtn'
         && css`
           width: 100%;
-          padding: 2rem;
+          padding: 1rem;
           background-color: ${({ theme }) => theme.colors.primary};
           color: ${({ theme }) => theme.colors.dark};
-          border-radius: 50px;
+          border-radius: 25px;
           font-weight: bold;
           transition: background-color 0.15s ease-in-out;
           &:hover {
@@ -37,7 +44,7 @@ const ButtonWrapper = styled.button`
             transform: scale(1);
           }
           &:active {
-            background-color: #24ddb1;
+            background-color: ${({ theme }) => theme.active.pink};
             transition: background-color 0.05s ease-in-out;
           }
         `};

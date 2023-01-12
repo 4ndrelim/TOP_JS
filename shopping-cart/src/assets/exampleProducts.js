@@ -2,7 +2,7 @@ import exampleImage from './images/example.png';
 
 const exampleProducts = [
   {
-    name: 'Women\'s red blouse',
+    name: 'Women\'s red blouse haha',
     price: '$39.99',
     image: exampleImage,
   },

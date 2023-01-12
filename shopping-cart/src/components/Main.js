@@ -22,11 +22,9 @@ const MainWrapper = styled.main`
     align-items: center;
     justify-content: center;
     max-width: ${({ theme }) => theme.widths.content};
-    padding: 12rem 0;
+    padding: 6rem 0 12rem;
     margin: 0 auto;
-    @media (max-width: 1000px) {
-      padding: 8rem 0;
-    };
+    
   `;
 
 export default Main;
