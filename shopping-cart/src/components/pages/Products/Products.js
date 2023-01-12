@@ -27,7 +27,7 @@ function Products() {
     <ProductCard
       key={uuidv4()}
       image={product.image}
-      name={product.title}
+      name={product.name}
       price={product.price}
     />
   ));
@@ -41,8 +41,8 @@ function Products() {
 
 const ProductsWrapper = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
   margin-top: 8rem;
   margin-bottom: 13.2rem;
   @media (max-width: 1000px) {
