@@ -33,9 +33,8 @@ function Cart() {
         <Title>Your shopping cart</Title>
         <Products>{products}</Products>
         <Total>
-          Total: `$
+          Total: $
           {totalSum()}
-          `
         </Total>
         <Button content="Checkout" type="primary" />
         <Button onClick={() => dispatch(closeCart())} content="Close" type="close" />

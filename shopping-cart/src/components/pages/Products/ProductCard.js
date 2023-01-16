@@ -22,10 +22,9 @@ function ProductCard({
           <div>
             $
             {price}
-
           </div>
         </Info>
-        <Button onClick={() => dispatch(addToCart)} type="addingBtn" content="Add to cart" />
+        <Button onClick={() => dispatch(addToCart(product))} type="addingBtn" content="Add to cart" />
       </Details>
     </ProductCardWrapper>
   );

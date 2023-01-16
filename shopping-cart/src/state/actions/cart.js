@@ -5,6 +5,14 @@ const addToCart = (product) => ({
   payload: product,
 });
 
+// function addToCart(product) {
+//   console.log('hi');
+//   return {
+//     type: ADD_TO_CART,
+//     payload: product,
+//   };
+// }
+
 const removeFromCart = (product) => ({
   type: REMOVE_FROM_CART,
   payload: product,
