@@ -4,18 +4,26 @@ import { v4 as uuidv4 } from 'uuid';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../elements/Button';
 import CartItem from './CartItem';
-import exampleProducts from '../../assets/exampleProducts';
 import { closeCart } from '../../state/actions';
 
 function Cart() {
+  const cart = useSelector((state) => state.cartReducer);
   const isCartOpen = useSelector((state) => state.isCartOpenReducer);
   const dispatch = useDispatch();
-  const products = exampleProducts.map((product) => (
+
+  const totalSum = () => cart.reduce(
+    (total, cartItem) => cartItem.price * cartItem.quantity + total,
+    0,
+  ).toFixed(2);
+
+  const products = cart.map((product) => (
     <CartItem
       key={uuidv4()}
+      id={product.id}
       name={product.name}
       price={product.price}
       image={product.image}
+      quantity={product.quantity}
     />
   ));
 
@@ -24,7 +32,11 @@ function Cart() {
       <CartWrapper isOpen={isCartOpen}>
         <Title>Your shopping cart</Title>
         <Products>{products}</Products>
-        <div>Total: $179.91</div>
+        <Total>
+          Total: `$
+          {totalSum()}
+          `
+        </Total>
         <Button content="Checkout" type="primary" />
         <Button onClick={() => dispatch(closeCart())} content="Close" type="close" />
       </CartWrapper>
@@ -52,7 +64,7 @@ const CartWrapper = styled.div`
   transition: right 0.85s ease-in-out;
   z-index: 1;
 
-  @media (max-width: 500px) {
+  @media (max-width: 450px) {
     width: 100%;
   }
 
@@ -91,6 +103,10 @@ const Overlay = styled.div`
     && css`
       left: 0%;
     `}
+`;
+
+const Total = styled.div`
+    font-weight:bold;
 `;
 
 export default Cart;

@@ -1,24 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { FaMinus, FaPlus } from 'react-icons/fa';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../state/actions';
 import Button from '../elements/Button';
 
-function CartItem({ name, price, image }) {
-  const formatName = (n) => {
-    const words = n.split(' ');
-    let result = '';
-    if (words.length < 3) {
-      return n;
-    }
-    for (let i = 0; i < 3; i++) {
-      result += `${words[i]} `;
-    }
-    if (words.length > 3) {
-      result += '...';
-    }
-    return result;
+function CartItem({
+  id, name, price, image, quantity,
+}) {
+  const formatName = (n) => (n.length <= 14 ? n : `${n.substring(0, 14)}...`);
+  const cartItem = {
+    id, name, price, image, quantity,
   };
-
+  const dispatch = useDispatch();
   return (
     <CartItemWrapper>
       <ImageContainer>
@@ -26,11 +20,14 @@ function CartItem({ name, price, image }) {
       </ImageContainer>
       <Info>
         <Name>{formatName(name)}</Name>
-        <div>{price}</div>
+        <div>
+          $
+          {price}
+        </div>
         <AmountChanger>
-          <Button content={<FaMinus />} type="decrement" />
-          <div>1</div>
-          <Button content={<FaPlus />} type="increment" />
+          <Button onClick={() => dispatch(removeFromCart(cartItem))} content={<FaMinus />} type="decrement" />
+          <div>{cartItem.quantity}</div>
+          <Button onClick={() => dispatch(addToCart(cartItem))} content={<FaPlus />} type="increment" />
         </AmountChanger>
       </Info>
     </CartItemWrapper>

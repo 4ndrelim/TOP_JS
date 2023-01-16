@@ -59,9 +59,5 @@ const GlobalStyle = styled.createGlobalStyle`
       font-size: 45%;
     }
   }
-  @media (max-width: 500px) {
-    html {
-      font-size: 40%;
-    }
 `;
 export default GlobalStyle;

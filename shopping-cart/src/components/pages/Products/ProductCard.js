@@ -1,8 +1,16 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import Button from '../../elements/Button';
+import { addToCart } from '../../../state/actions';
 
-function ProductCard({ image, name, price }) {
+function ProductCard({
+  id, image, name, price,
+}) {
+  const product = {
+    id, image, name, price,
+  };
+  const dispatch = useDispatch();
   return (
     <ProductCardWrapper>
       <ImageContainer>
@@ -11,9 +19,13 @@ function ProductCard({ image, name, price }) {
       <Details>
         <Info>
           <Name>{name}</Name>
-          <div>{price}</div>
+          <div>
+            $
+            {price}
+
+          </div>
         </Info>
-        <Button type="addingBtn" content="Add to cart" />
+        <Button onClick={() => dispatch(addToCart)} type="addingBtn" content="Add to cart" />
       </Details>
     </ProductCardWrapper>
   );

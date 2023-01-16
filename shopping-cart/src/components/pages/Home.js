@@ -46,7 +46,7 @@ const SmallMessage = styled.div`
 `;
 
 const BigMessage = styled.div`
-  font-size: 6.4rem;
+  font-size: 5rem;
   font-weight: bold;
   margin-bottom: 3rem;
   @media (max-width: 1100px) {

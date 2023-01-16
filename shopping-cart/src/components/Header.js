@@ -21,7 +21,7 @@ const NavBar = styled.nav`
         width: 60rem;
     };
     @media (max-width: 450px) {
-      width: 50rem;
+      width: 48rem;
   };
 `;
 
