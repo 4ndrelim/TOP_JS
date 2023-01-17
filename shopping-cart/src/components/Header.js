@@ -2,9 +2,61 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { FaShoppingCart } from 'react-icons/fa';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from './elements/Button';
 import { openCart } from '../state/actions';
+
+function Header() {
+  const cart = useSelector((state) => state.cartReducer);
+  function totalQty() {
+    return cart.reduce((total, cartItem) => total + cartItem.quantity, 0);
+  }
+  const dispatch = useDispatch();
+  return (
+    <HeaderBackground>
+      <HeaderWrapper>
+        <Logo>Welcome</Logo>
+        <NavBar>
+          <StyledLink to="/">Home</StyledLink>
+          <StyledLink to="/products">Products</StyledLink>
+          <StyledLink to="/contact">Contact</StyledLink>
+          {/* <Button onClick={() => dispatch(openCart())} content={<FaShoppingCart />} /> */}
+          <ButtonContainer onClick={() => dispatch(openCart())}>
+            <Button content={<FaShoppingCart />} shape="round" />
+            {totalQty() > 0 ? <Quantity>{totalQty()}</Quantity> : ''}
+          </ButtonContainer>
+        </NavBar>
+      </HeaderWrapper>
+    </HeaderBackground>
+  );
+}
+
+const ButtonContainer = styled.div`
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s ease-in-out;
+  &:hover {
+    transform: scale(1.1);
+  }
+  &:active {
+    transform: scale(1.02);
+  }
+`;
+
+const Quantity = styled.div`
+  position: absolute;
+  top: 4rem;
+  right: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.colors.red};
+  font-size: 2rem;
+  font-weight: bold;
+`;
 
 const Logo = styled.h1`
   color: ${({ theme }) => theme.colors.primary};
@@ -50,22 +102,5 @@ const HeaderWrapper = styled.div`
     width: 100%;
   }
 `;
-
-function Header() {
-  const dispatch = useDispatch();
-  return (
-    <HeaderBackground>
-      <HeaderWrapper>
-        <Logo>Welcome</Logo>
-        <NavBar>
-          <StyledLink to="/">Home</StyledLink>
-          <StyledLink to="/products">Products</StyledLink>
-          <StyledLink to="/contact">Contact</StyledLink>
-          <Button onClick={() => dispatch(openCart())} content={<FaShoppingCart />} />
-        </NavBar>
-      </HeaderWrapper>
-    </HeaderBackground>
-  );
-}
 
 export default Header;
