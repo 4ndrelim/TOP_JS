@@ -48,7 +48,7 @@ const Image = styled.img`
 `;
 
 const ImageContainer = styled.div`
-  height: 40rem;
+  height: 25rem;
   padding: 3rem;
   margin: 0 auto;
 `;
