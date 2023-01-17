@@ -12,6 +12,9 @@ function CartItem({
   const cartItem = {
     id, name, price, image, quantity,
   };
+
+  const sumPrice = () => (cartItem.quantity * cartItem.price).toFixed(2);
+
   const dispatch = useDispatch();
   return (
     <CartItemWrapper>
@@ -22,7 +25,7 @@ function CartItem({
         <Name>{formatName(name)}</Name>
         <div>
           $
-          {price}
+          {sumPrice()}
         </div>
         <AmountChanger>
           <Button onClick={() => dispatch(removeFromCart(cartItem))} content={<FaMinus />} type="decrement" />

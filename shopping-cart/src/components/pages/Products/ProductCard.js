@@ -21,7 +21,7 @@ function ProductCard({
           <Name>{name}</Name>
           <div>
             $
-            {price}
+            {price.toFixed(2)}
           </div>
         </Info>
         <Button onClick={() => dispatch(addToCart(product))} type="addingBtn" content="Add to cart" />
