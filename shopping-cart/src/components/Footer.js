@@ -6,12 +6,10 @@ function Footer() {
   return (
     <FooterWrapper>
       Cloned @
-      <br />
-      Copyright ©
+      michalosman
       {' '}
       {new Date().getFullYear()}
       {' '}
-      michalosman
       <GithubLink href="https://github.com/michalosman" target="_blank">
         <FaGithub />
       </GithubLink>
@@ -28,7 +26,7 @@ const FooterWrapper = styled.footer`
   justify-content: center;
   width: 100%;
   padding: 1rem 0;
-  font-size: 2.2rem;
+  font-size: 1rem;
   text-align: center;
   `;
 
