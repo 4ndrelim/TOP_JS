@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/TOP_JS/static/js/main.a2a11a39.js",
+    "static/media/homepage-image.png": "/TOP_JS/static/media/homepage-image.bd89f8b360e58987fee2.png",
+    "static/media/background.png": "/TOP_JS/static/media/background.a856c8db02c794d05b69.png",
+    "index.html": "/TOP_JS/index.html",
+    "main.a2a11a39.js.map": "/TOP_JS/static/js/main.a2a11a39.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.a2a11a39.js"
+  ]
+}
