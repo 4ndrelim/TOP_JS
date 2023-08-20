@@ -11,7 +11,7 @@ A simple website where I explore more about advanced HTML/CSS
 <img src="assets/demo/diner.png" alt="Restaurant Page" width="700"/>
 
 <br>
-A responsive website in React where I make a deep-dive into React applications. Click here to see more!
+A responsive website in React where I make a deep-dive into React applications. Click [here](https://4ndrelim.github.io/TOP_JS/) to see more!
 <br>
 <img src="assets/demo/shopping_cart.png" alt="Shpping Site" width="700"/>
 
